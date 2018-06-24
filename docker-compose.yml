@@ -3,7 +3,7 @@ version: '2'
 services:
   homebridge:
     restart: always
-    image: oznu/homebridge:1.7.8
+    image: oznu/homebridge:debian
     network_mode: "host"
     volumes:
     - ./config:/homebridge
