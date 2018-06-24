@@ -4,16 +4,10 @@ services:
   homebridge:
     restart: always
     image: oznu/homebridge:1.7.8
+    network_mode: "host"
     volumes:
     - ./config:/homebridge
     environment:
     - "PUID=${PUID}"
     - "PGID=${PGID}"
     - "TZ=${TZ}"
-    networks:
-      hostnet: {}
-
-networks:
-  hostnet:
-    external: true
-    name: host
