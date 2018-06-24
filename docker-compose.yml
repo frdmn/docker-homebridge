@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  homebridge:
+    restart: always
+    image: oznu/homebridge:1.7.8
+    volumes:
+    - ./config:/homebridge
+    environment:
+    - "PUID=0"
+    - "PGID=0"
+    - "TZ=Europe/Berlin"
+    networks:
+      hostnet: {}
+
+networks:
+  hostnet:
+    external: true
+    name: host
