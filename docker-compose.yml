@@ -7,9 +7,9 @@ services:
     volumes:
     - ./config:/homebridge
     environment:
-    - "PUID=0"
-    - "PGID=0"
-    - "TZ=Europe/Berlin"
+    - "PUID=${PUID}"
+    - "PGID=${PGID}"
+    - "TZ=${TZ}"
     networks:
       hostnet: {}
 
